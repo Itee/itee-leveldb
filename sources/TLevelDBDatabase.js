@@ -35,15 +35,17 @@ class TLevelDBDatabase extends TAbstractDatabase {
 
         db.put( 'name', 'LevelUP', function ( err ) {
             if ( err ) {
-                return console.log( 'Ooops!', err )
+                this.logger.log( 'Ooops!', err )
+                return
             }
 
             db.get( 'name', function ( err, value ) {
                 if ( err ) {
-                    return console.log( 'Ooops!', err )
+                    this.logger.log( 'Ooops!', err )
+                    return
                 }
 
-                console.log( 'name=' + value )
+                this.logger.log( 'name=' + value )
             } )
         } )
 
