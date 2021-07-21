@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/Itee/itee-leveldb/compare/v1.0.2...v1.0.3) (2021-07-21)
+
+
+### Bug Fixes
+
+* **readme:** add simple readme content ([5542a72](https://github.com/Itee/itee-leveldb/commit/5542a72798ccc91ffd6fcccf95b40e3ef33cdae5))
+
 ## [1.0.2](https://github.com/Itee/itee-leveldb/compare/v1.0.1...v1.0.2) (2021-07-08)
 
 

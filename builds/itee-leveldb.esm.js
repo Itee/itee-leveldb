@@ -1,4 +1,4 @@
-console.log('Itee.Database.Level v1.0.2 - EsModule')
+console.log('Itee.Database.Level v1.0.3 - EsModule')
 import * as LevelUpDriver from 'levelup';
 import { TAbstractDatabase } from 'itee-database';
 

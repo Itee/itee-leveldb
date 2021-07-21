@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Itee-LevelDB Modules</title>
+	<title>Itee-LevelDB Source: sources/TLevelDBDatabase.js</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -67,93 +67,83 @@
 <div class="row">
 
 	
-	<div class="col-md-8">
+	<div class="col-md-12">
 	
 		<div id="main">
 			
 
-	<h1 class="page-title">Modules</h1>
+		<h1 class="page-title">Source: sources/TLevelDBDatabase.js</h1>
+    
 <section>
+    <article>
+        <pre
+            class="sunlight-highlight-javascript linenums">/**
+ * @author [Ahmed DCHAR]{@link https://github.com/dragoneel}
+ * @license [BSD-3-Clause]{@link https://opensource.org/licenses/BSD-3-Clause}
+ *
+ * @file Todo
+ *
+ * @example Todo
+ *
+ */
 
-<header>
-    
-        <h2>
-        
-        </h2>
-        
-    
-</header>
+import * as LevelUpDriver    from 'levelup'
+import { TAbstractDatabase } from 'itee-database'
 
+class TLevelDBDatabase extends TAbstractDatabase {
 
-<article>
-    <div class="container-overview">
-    
-        
+    constructor ( parameters = {} ) {
 
-        
-<dl class="details">
-    
+        const _parameters = {
+            ...{},
+            ...parameters,
+            ...{
+                driver: LevelUpDriver
+            }
+        }
 
-	
+        super( _parameters )
 
-	
+    }
 
-	
+    close ( /*onCloseCallback*/ ) {}
 
-    
+    connect () {
 
-    
+        var db = this._driver( './mydb' )
 
-    
+        db.put( 'name', 'LevelUP', function ( err ) {
+            if ( err ) {
+                this.logger.log( 'Ooops!', err )
+                return
+            }
 
-    
+            db.get( 'name', function ( err, value ) {
+                if ( err ) {
+                    this.logger.log( 'Ooops!', err )
+                    return
+                }
 
-	
+                this.logger.log( 'name=' + value )
+            } )
+        } )
 
-	
+    }
 
-	
+    init () {
+        super.init()
 
-	
+    }
 
-	
+    on ( /*eventName, callback*/ ) {}
 
+}
 
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-        
-    
-    </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</article>
-
+export { TLevelDBDatabase }
+</pre>
+    </article>
 </section>
+
 
 
 
@@ -163,10 +153,6 @@
 
 	<div class="clearfix"></div>
 
-	
-		<div class="col-md-3">
-			<div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
-		</div>
 	
 
 </div>
